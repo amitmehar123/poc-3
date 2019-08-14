@@ -1,0 +1,19 @@
+- name: create ec2 launch config
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: asg create
+    ec2_asg:
+      name: project-asg2
+      launch_config_name: launch_config
+      region: us-east-2
+      target_group_arns: ['arn:aws:elasticloadbalancing:us-east-2:099690303560:targetgroup/project-TG/97a1edf16eb1882c']
+      availability_zones: ['us-east-2a']
+      min_size: 1    
+      max_size: 1
+      desired_capacity: 1
+      replace_all_instances: yes
+      vpc_zone_identifier: ['subnet-06cd510b3e930dbba']
+      tags: 
+        - type: prft_web_server
+      wait_for_instances: yes

@@ -1,0 +1,14 @@
+- name: create ec2 launch config
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: ec2 LC create 
+    ec2_lc:
+      name: launch_config
+      image_id: ami-0d3ac0a2ea7ee3a88
+      instance_type: t2.micro
+      key_name: demo-ohio
+      security_groups: sg-0590341a4efb700cc
+      region: us-east-2
+      assign_public_ip: yes
+      user_data_path: /etc/ansible/user-data/tomcat-data.sh
