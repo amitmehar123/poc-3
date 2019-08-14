@@ -22,7 +22,7 @@
   - ec2_remote_facts:
       region: us-east-2
       filters:
-        tag:type: "prft_web_server"
+        tag:type: "prft_web_server-1"
     register: instance_facts
   
   - name: Add the newly created EC2 instance(s) to the local host group
