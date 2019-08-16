@@ -4,7 +4,7 @@
   tasks:
   - name: ec2 LC create 
     ec2_lc:
-      name: launch_config
+      name: launch_config1
       image_id: ami-0d3ac0a2ea7ee3a88
       instance_type: t2.micro
       key_name: demo-ohio
