@@ -4,7 +4,7 @@
   tasks:
   - name: asg create
     ec2_asg:
-      name: project-asg
+      name: project-asg1
       launch_config_name: launch_config
       region: us-east-2
       target_group_arns: ['arn:aws:elasticloadbalancing:us-east-2:099690303560:targetgroup/project-TG/97a1edf16eb1882c']
@@ -15,7 +15,7 @@
       replace_all_instances: yes
       vpc_zone_identifier: ['subnet-06cd510b3e930dbba']
       tags:
-        - type: prft_web_server
+        - type: prft_web_server1
       wait_for_instances: yes
     register: asg_result
     
