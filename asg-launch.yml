@@ -19,7 +19,7 @@
       wait_for_instances: yes
     register: asg_result
     
-  - ec2_metadata_facts:
+  - ec2_remote_facts:
       region: us-east-2
       filters:
         tag:type: "prft_web_server-1"
